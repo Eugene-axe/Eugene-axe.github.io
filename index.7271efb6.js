@@ -45509,7 +45509,7 @@ $RefreshReg$(_c12, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","react-router-dom":"cHIiW","./elements":"k3ebc","./CategorySelection":"nyAeq","../hooks/useAlert":"jYsML","../hooks/useValidate":"knD9e","./styled/additionalStyles":"2ISYd","../const":"fsDi5","../rest/loadImage":"4Fk0y","../img/picture.svg":"joAsO","./ConstrainPointer":"8Ta8b","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./loaders/SpinnerLoader":"1yvWQ","./RatingField":"6Lji7"}],"nyAeq":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","react-router-dom":"cHIiW","./elements":"k3ebc","./CategorySelection":"nyAeq","../hooks/useAlert":"jYsML","../hooks/useValidate":"knD9e","./styled/additionalStyles":"2ISYd","../const":"fsDi5","../rest/loadImage":"4Fk0y","../img/picture.svg":"joAsO","./ConstrainPointer":"8Ta8b","./loaders/SpinnerLoader":"1yvWQ","./RatingField":"6Lji7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"nyAeq":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b083 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45532,7 +45532,7 @@ var _inputDatalistDefault = parcelHelpers.interopDefault(_inputDatalist);
 var _s = $RefreshSig$();
 const arrayTrimmedByValue = (value, array)=>{
     const index = array.indexOf(value);
-    trimArray = array.slice(0, index + 1);
+    const trimArray = array.slice(0, index + 1);
     return trimArray;
 };
 const CategorySelection = (props)=>{
@@ -46035,7 +46035,7 @@ $RefreshReg$(_c1, "SpinnerLoader");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../styled/keyframes":"60eli"}],"6Lji7":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","../styled/keyframes":"60eli","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6Lji7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$84cb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
