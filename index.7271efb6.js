@@ -24434,7 +24434,7 @@ const Header = (props)=>{
             columnNumber: 11
         },
         __self: undefined
-    }, "Welcome , ", user ? user.name : 'Guest', " !"))), /*#__PURE__*/ _reactDefault.default.createElement(_navigationDefault.default, {
+    }, "\u041F\u0440\u0438\u0432\u0435\u0442, ", user ? user.name : 'Guest', " !"))), /*#__PURE__*/ _reactDefault.default.createElement(_navigationDefault.default, {
         isLoggedIn: !!user,
         isHide: isNavHide,
         setHide: setNavHide,
@@ -27801,7 +27801,7 @@ const Navigation = (props)=>{
             columnNumber: 11
         },
         __self: undefined
-    }, "Home")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+    }, "\u0414\u043E\u043C\u043E\u0439")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/Navigation.js",
             lineNumber: 53,
@@ -27816,7 +27816,7 @@ const Navigation = (props)=>{
             columnNumber: 11
         },
         __self: undefined
-    }, "My Things")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+    }, "\u041C\u043E\u0438 \u0432\u0435\u0449\u0438")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/Navigation.js",
             lineNumber: 56,
@@ -27831,7 +27831,7 @@ const Navigation = (props)=>{
             columnNumber: 11
         },
         __self: undefined
-    }, "New")), props.isLoggedIn ? /*#__PURE__*/ _reactDefault.default.createElement("li", {
+    }, "\u041D\u043E\u0432\u0430\u044F")), props.isLoggedIn ? /*#__PURE__*/ _reactDefault.default.createElement("li", {
         className: "last",
         __source: {
             fileName: "src/components/Navigation.js",
@@ -27847,7 +27847,7 @@ const Navigation = (props)=>{
             columnNumber: 13
         },
         __self: undefined
-    }, "Log out")) : /*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement("li", {
+    }, "\u0412\u044B\u0439\u0442\u0438")) : /*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement("li", {
         className: "last",
         __source: {
             fileName: "src/components/Navigation.js",
@@ -27863,7 +27863,7 @@ const Navigation = (props)=>{
             columnNumber: 15
         },
         __self: undefined
-    }, "Sign In")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+    }, "\u0417\u0430\u0439\u0442\u0438")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/Navigation.js",
             lineNumber: 68,
@@ -27878,7 +27878,7 @@ const Navigation = (props)=>{
             columnNumber: 15
         },
         __self: undefined
-    }, "Sign Up")))));
+    }, "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F")))));
 };
 _s(Navigation, "HP8UOal6apIYNeMK39yWoIrZ0QY=", false, function() {
     return [
@@ -28663,6 +28663,8 @@ parcelHelpers.export(exports, "blink", ()=>blink
 );
 parcelHelpers.export(exports, "falls", ()=>falls
 );
+parcelHelpers.export(exports, "spinner", ()=>spinner
+);
 var _styledComponents = require("styled-components");
 const puls = _styledComponents.keyframes`
     0%,
@@ -28683,7 +28685,7 @@ const pulsOpacity = _styledComponents.keyframes`
   }
 `;
 const blink = _styledComponents.keyframes`
-0% {
+      0% {
           left: -150px;
       } 
       70%, 100% {
@@ -28691,7 +28693,7 @@ const blink = _styledComponents.keyframes`
       }
 `;
 const falls = _styledComponents.keyframes`
- 0% {
+    0% {
       left: -100%;
       opacity: 0;
     }
@@ -28707,6 +28709,21 @@ const falls = _styledComponents.keyframes`
       left: -10%;
       opacity: 0;
     }`;
+const spinner = _styledComponents.keyframes`
+    0% {
+      border-color: white rgba(255, 255, 255, 0) rgba(255, 255, 255, 0)
+        rgba(255, 255, 255, 0);
+    }
+    33% {
+      border-color: white white rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+    }
+    66% {
+      border-color: white white white rgba(255, 255, 255, 0);
+    }
+    100% {
+      border-color: white white white white;
+    }
+`;
 
 },{"styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lksCL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -29347,7 +29364,7 @@ var _useSubscriptionJs = require("./react/hooks/useSubscription.js");
 var _useApolloClientJs = require("./react/hooks/useApolloClient.js");
 var _renderPromisesJs = require("./react/ssr/RenderPromises.js");
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","zen-observable":"4w7A0","./utilities/graphql/storeUtils.js":"dDzEB","./utilities/graphql/getFromAST.js":"7V9xw","./link/core/ApolloLink.js":"3IMlV","./link/core/execute.js":"38fCH","./errors/ApolloError.js":"5cyWR","./core/networkStatus.js":"2bxcN","./core/types.js":"u1KXa","./core/ObservableQuery.js":"7svFE","./link/http/serializeFetchParameter.js":"45J5O","./link/http/selectURI.js":"7JSXi","./link/utils/throwServerError.js":"gLrRs","./link/http/parseAndCheckHttpResponse.js":"gwG2w","./link/http/checkFetcher.js":"ahEkQ","./link/http/selectHttpOptionsAndBody.js":"4tXAp","./link/http/createSignalIfSupported.js":"4epCf","./link/utils/fromError.js":"dQkEx","./link/http/createHttpLink.js":"2mFXo","./link/http/HttpLink.js":"bpm4N","./ApolloClient.js":"bIJN6","graphql-tag":"bCfYb","./cache/core/cache.js":"9CL2F","./cache/core/types/Cache.js":"3uqgb","./cache/inmemory/policies.js":"i310Z","./cache/inmemory/inMemoryCache.js":"kIdrg","./link/core/empty.js":"h6yy7","./link/core/from.js":"1QuNj","./link/core/split.js":"i5PvA","./link/core/concat.js":"lQDvB","./react/context/ApolloContext.js":"1ZCCj","./react/context/ApolloProvider.js":"c79Qr","./react/context/ApolloConsumer.js":"4BV0u","./react/parser/parser.js":"6Kv7m","./react/hooks/useQuery.js":"3pjtN","./react/hooks/useLazyQuery.js":"cC0VI","./react/hooks/useMutation.js":"9nVzX","./react/hooks/useSubscription.js":"lxceS","./react/hooks/useApolloClient.js":"6CQiw","./react/ssr/RenderPromises.js":"8jgfN"}],"4w7A0":[function(require,module,exports) {
+},{"zen-observable":"4w7A0","./utilities/graphql/storeUtils.js":"dDzEB","./utilities/graphql/getFromAST.js":"7V9xw","./link/core/ApolloLink.js":"3IMlV","./link/core/execute.js":"38fCH","./errors/ApolloError.js":"5cyWR","./core/networkStatus.js":"2bxcN","./core/types.js":"u1KXa","./core/ObservableQuery.js":"7svFE","./link/http/serializeFetchParameter.js":"45J5O","./link/http/selectURI.js":"7JSXi","./link/utils/throwServerError.js":"gLrRs","./link/http/parseAndCheckHttpResponse.js":"gwG2w","./link/http/checkFetcher.js":"ahEkQ","./link/http/selectHttpOptionsAndBody.js":"4tXAp","./link/http/createSignalIfSupported.js":"4epCf","./link/utils/fromError.js":"dQkEx","./link/http/createHttpLink.js":"2mFXo","./link/http/HttpLink.js":"bpm4N","./ApolloClient.js":"bIJN6","graphql-tag":"bCfYb","./cache/core/cache.js":"9CL2F","./cache/core/types/Cache.js":"3uqgb","./cache/inmemory/policies.js":"i310Z","./cache/inmemory/inMemoryCache.js":"kIdrg","./link/core/empty.js":"h6yy7","./link/core/from.js":"1QuNj","./link/core/split.js":"i5PvA","./link/core/concat.js":"lQDvB","./react/context/ApolloContext.js":"1ZCCj","./react/context/ApolloProvider.js":"c79Qr","./react/context/ApolloConsumer.js":"4BV0u","./react/parser/parser.js":"6Kv7m","./react/hooks/useQuery.js":"3pjtN","./react/hooks/useLazyQuery.js":"cC0VI","./react/hooks/useMutation.js":"9nVzX","./react/hooks/useSubscription.js":"lxceS","./react/hooks/useApolloClient.js":"6CQiw","./react/ssr/RenderPromises.js":"8jgfN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4w7A0":[function(require,module,exports) {
 module.exports = require('./lib/Observable.js').Observable;
 
 },{"./lib/Observable.js":"gVXbs"}],"gVXbs":[function(require,module,exports) {
@@ -42279,10 +42296,9 @@ const InputDatalist = (props)=>{
             setAlert("Can't save this value", _const.NEGATIVE);
             return;
         }
-        // setNewValue('');
-        // setHide(true);
-        // actionWithNewValue(newValue);
-        console.log(`actionWithNewValue(${newValue})`);
+        setNewValue('');
+        setHide(true);
+        actionWithNewValue(newValue);
     };
     return /*#__PURE__*/ _reactDefault.default.createElement(Wrapper, {
         tabIndex: 0,
@@ -42295,14 +42311,14 @@ const InputDatalist = (props)=>{
         },
         __source: {
             fileName: "src/components/InputDatalist.js",
-            lineNumber: 46,
+            lineNumber: 45,
             columnNumber: 5
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement(LabelContainer, {
         __source: {
             fileName: "src/components/InputDatalist.js",
-            lineNumber: 56,
+            lineNumber: 55,
             columnNumber: 7
         },
         __self: undefined
@@ -42310,7 +42326,7 @@ const InputDatalist = (props)=>{
         error: errors.titleCat,
         __source: {
             fileName: "src/components/InputDatalist.js",
-            lineNumber: 57,
+            lineNumber: 56,
             columnNumber: 9
         },
         __self: undefined
@@ -42334,7 +42350,7 @@ const InputDatalist = (props)=>{
         },
         __source: {
             fileName: "src/components/InputDatalist.js",
-            lineNumber: 58,
+            lineNumber: 57,
             columnNumber: 11
         },
         __self: undefined
@@ -42343,7 +42359,7 @@ const InputDatalist = (props)=>{
         onClick: actionSubmitButton,
         __source: {
             fileName: "src/components/InputDatalist.js",
-            lineNumber: 77,
+            lineNumber: 76,
             columnNumber: 11
         },
         __self: undefined
@@ -42351,14 +42367,14 @@ const InputDatalist = (props)=>{
         maxRows: maxRows,
         __source: {
             fileName: "src/components/InputDatalist.js",
-            lineNumber: 83,
+            lineNumber: 82,
             columnNumber: 9
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("ul", {
         __source: {
             fileName: "src/components/InputDatalist.js",
-            lineNumber: 84,
+            lineNumber: 83,
             columnNumber: 11
         },
         __self: undefined
@@ -42371,7 +42387,7 @@ const InputDatalist = (props)=>{
             },
             __source: {
                 fileName: "src/components/InputDatalist.js",
-                lineNumber: 90,
+                lineNumber: 89,
                 columnNumber: 17
             },
             __self: undefined
@@ -44442,7 +44458,7 @@ const FormLogin = (props)=>{
             columnNumber: 9
         },
         __self: undefined
-    }, props.formType === 'signin' ? 'Sing in' : 'Sign Up'), /*#__PURE__*/ _reactDefault.default.createElement(List, {
+    }, props.formType === 'signin' ? 'Зайти' : 'Регистрация'), /*#__PURE__*/ _reactDefault.default.createElement(List, {
         __source: {
             fileName: "src/components/FormLogin.js",
             lineNumber: 98,
@@ -44464,10 +44480,10 @@ const FormLogin = (props)=>{
             columnNumber: 13
         },
         __self: undefined
-    }, "Username"), /*#__PURE__*/ _reactDefault.default.createElement(Input, {
+    }, "\u041B\u043E\u0433\u0438\u043D"), /*#__PURE__*/ _reactDefault.default.createElement(Input, {
         error: errors.username,
         type: "text",
-        placeholder: "enter username",
+        placeholder: "\u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043B\u043E\u0433\u0438\u043D",
         id: "username",
         name: "username",
         onChange: onChange,
@@ -44503,10 +44519,10 @@ const FormLogin = (props)=>{
             columnNumber: 15
         },
         __self: undefined
-    }, "Name"), /*#__PURE__*/ _reactDefault.default.createElement(Input, {
+    }, "\u0418\u043C\u044F"), /*#__PURE__*/ _reactDefault.default.createElement(Input, {
         error: errors.name,
         type: "text",
-        placeholder: "enter rname",
+        placeholder: "\u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043C\u044F",
         id: "name",
         name: "name",
         onChange: onChange,
@@ -44542,10 +44558,10 @@ const FormLogin = (props)=>{
             columnNumber: 13
         },
         __self: undefined
-    }, "Password"), /*#__PURE__*/ _reactDefault.default.createElement(Input, {
+    }, "\u041F\u0430\u0440\u043E\u043B\u044C"), /*#__PURE__*/ _reactDefault.default.createElement(Input, {
         error: errors.password,
         type: "password",
-        placeholder: "enter password",
+        placeholder: "\u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C",
         id: "password",
         name: "password",
         onChange: onChange,
@@ -44583,7 +44599,7 @@ const FormLogin = (props)=>{
             columnNumber: 13
         },
         __self: undefined
-    }, "Leave"), /*#__PURE__*/ _reactDefault.default.createElement(_elements.ButtonPositive, {
+    }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E"), /*#__PURE__*/ _reactDefault.default.createElement(_elements.ButtonPositive, {
         type: "submit",
         __source: {
             fileName: "src/components/FormLogin.js",
@@ -44591,7 +44607,7 @@ const FormLogin = (props)=>{
             columnNumber: 13
         },
         __self: undefined
-    }, props.formType === 'signin' ? 'Enter' : 'Register')))));
+    }, props.formType === 'signin' ? 'Вход' : 'Регистрируем')))));
 };
 _s(FormLogin, "zC/Zytbcrq0278jaJ+RaMxBcMpI=", false, function() {
     return [
@@ -44824,6 +44840,10 @@ var _pictureSvg = require("../img/picture.svg");
 var _pictureSvgDefault = parcelHelpers.interopDefault(_pictureSvg);
 var _constrainPointer = require("./ConstrainPointer");
 var _constrainPointerDefault = parcelHelpers.interopDefault(_constrainPointer);
+var _spinnerLoader = require("./loaders/SpinnerLoader");
+var _spinnerLoaderDefault = parcelHelpers.interopDefault(_spinnerLoader);
+var _ratingField = require("./RatingField");
+var _ratingFieldDefault = parcelHelpers.interopDefault(_ratingField);
 var _s = $RefreshSig$();
 const FormThing = (props)=>{
     _s();
@@ -44915,43 +44935,54 @@ const FormThing = (props)=>{
         className: "form-thing",
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 98,
+            lineNumber: 100,
             columnNumber: 5
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement(Image, {
+        load: loadImage,
         image: values.images[values.images.length - 1],
+        onClick: ()=>{
+            document.getElementById('thing-image').click();
+        },
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 99,
+            lineNumber: 101,
             columnNumber: 7
         },
         __self: undefined
-    }, loadImage && 'Loading'), /*#__PURE__*/ _reactDefault.default.createElement(Fieldset, {
+    }, loadImage && /*#__PURE__*/ _reactDefault.default.createElement(_spinnerLoaderDefault.default, {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 102,
+            lineNumber: 108,
+            columnNumber: 23
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(Fieldset, {
+        __source: {
+            fileName: "src/components/FormThing.js",
+            lineNumber: 110,
             columnNumber: 7
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("legend", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 103,
+            lineNumber: 111,
             columnNumber: 9
         },
         __self: undefined
-    }, "Create thing card"), /*#__PURE__*/ _reactDefault.default.createElement(List, {
+    }, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0432\u0435\u0449\u0438"), /*#__PURE__*/ _reactDefault.default.createElement(List, {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 104,
+            lineNumber: 112,
             columnNumber: 9
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 105,
+            lineNumber: 113,
             columnNumber: 11
         },
         __self: undefined
@@ -44964,7 +44995,7 @@ const FormThing = (props)=>{
         message: '',
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 106,
+            lineNumber: 114,
             columnNumber: 13
         },
         __self: undefined
@@ -44972,11 +45003,11 @@ const FormThing = (props)=>{
         htmlFor: "thing-title",
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 114,
+            lineNumber: 122,
             columnNumber: 13
         },
         __self: undefined
-    }, "Title"), /*#__PURE__*/ _reactDefault.default.createElement(InputTitle, {
+    }, "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435"), /*#__PURE__*/ _reactDefault.default.createElement(InputTitle, {
         error: errors.title,
         ref: title,
         type: "text",
@@ -44997,14 +45028,14 @@ const FormThing = (props)=>{
         },
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 115,
+            lineNumber: 123,
             columnNumber: 13
         },
         __self: undefined
     })), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 136,
+            lineNumber: 144,
             columnNumber: 11
         },
         __self: undefined
@@ -45018,37 +45049,37 @@ const FormThing = (props)=>{
         categories: values.category,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 137,
+            lineNumber: 145,
             columnNumber: 13
         },
         __self: undefined
     })), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 144,
+            lineNumber: 152,
             columnNumber: 11
         },
         __self: undefined
-    }, /*#__PURE__*/ _reactDefault.default.createElement(PublickCheckbox, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(PublicCheckbox, {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 145,
+            lineNumber: 153,
             columnNumber: 13
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 146,
+            lineNumber: 154,
             columnNumber: 15
         },
         __self: undefined
-    }, "Who can see"), /*#__PURE__*/ _reactDefault.default.createElement(PublicToggle, {
+    }, "\u041A\u0442\u043E \u043C\u043E\u0436\u0435\u0442 \u0432\u0438\u0434\u0435\u0442\u044C"), /*#__PURE__*/ _reactDefault.default.createElement(PublicToggle, {
         htmlFor: "thing-public",
         public: values.public,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 147,
+            lineNumber: 155,
             columnNumber: 15
         },
         __self: undefined
@@ -45063,14 +45094,14 @@ const FormThing = (props)=>{
         },
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 148,
+            lineNumber: 156,
             columnNumber: 15
         },
         __self: undefined
     }))), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 157,
+            lineNumber: 165,
             columnNumber: 11
         },
         __self: undefined
@@ -45083,7 +45114,7 @@ const FormThing = (props)=>{
         message: '',
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 158,
+            lineNumber: 166,
             columnNumber: 13
         },
         __self: undefined
@@ -45091,11 +45122,11 @@ const FormThing = (props)=>{
         htmlFor: "thing-description",
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 166,
+            lineNumber: 174,
             columnNumber: 13
         },
         __self: undefined
-    }, "Descriprion"), /*#__PURE__*/ _reactDefault.default.createElement(AreaDescription, {
+    }, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435"), /*#__PURE__*/ _reactDefault.default.createElement(AreaDescription, {
         name: "description",
         id: "thing-description",
         rows: "4",
@@ -45116,50 +45147,39 @@ const FormThing = (props)=>{
         error: errors.description,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 167,
+            lineNumber: 175,
             columnNumber: 13
         },
         __self: undefined
     })), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 188,
+            lineNumber: 196,
             columnNumber: 11
         },
         __self: undefined
-    }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
-        htmlFor: "thing-rating",
-        __source: {
-            fileName: "src/components/FormThing.js",
-            lineNumber: 189,
-            columnNumber: 13
-        },
-        __self: undefined
-    }), /*#__PURE__*/ _reactDefault.default.createElement(RatingContainer, {
-        error: errors.rating,
-        __source: {
-            fileName: "src/components/FormThing.js",
-            lineNumber: 190,
-            columnNumber: 13
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _reactDefault.default.createElement(InputRating, {
-        type: "range",
-        min: "1",
-        max: "10",
-        step: "1",
-        value: values.rating,
-        name: "rating",
-        id: "thing-rating",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(RatingContainer, {
+        tabIndex: 0,
         ref: rating,
-        onChange: (event)=>{
+        __source: {
+            fileName: "src/components/FormThing.js",
+            lineNumber: 197,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_ratingFieldDefault.default, {
+        tabIndex: 0,
+        rating: values.rating,
+        change: (newRating)=>{
             setValues({
                 ...values,
-                [event.target.name]: Number(event.target.value)
+                rating: Number(newRating)
             });
+        },
+        onBlur: ()=>{
             validate({
-                name: event.target.name,
-                value: Number(event.target.value),
+                name: 'rating',
+                value: Number(values.rating),
                 conditions: {
                     require: true,
                     min: 1,
@@ -45169,22 +45189,15 @@ const FormThing = (props)=>{
         },
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 191,
+            lineNumber: 198,
             columnNumber: 15
         },
         __self: undefined
-    }), /*#__PURE__*/ _reactDefault.default.createElement("span", {
-        __source: {
-            fileName: "src/components/FormThing.js",
-            lineNumber: 216,
-            columnNumber: 15
-        },
-        __self: undefined
-    }, values.rating))), /*#__PURE__*/ _reactDefault.default.createElement(InputFileContainer, {
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(InputFileContainer, {
         maxCount: values.images.length >= maxImage,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 219,
+            lineNumber: 221,
             columnNumber: 11
         },
         __self: undefined
@@ -45192,11 +45205,11 @@ const FormThing = (props)=>{
         htmlFor: "thing-image",
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 220,
+            lineNumber: 222,
             columnNumber: 13
         },
         __self: undefined
-    }, values.images.length >= maxImage ? `Max amount images ${values.images.length + '/' + maxImage}` : `Add image ${values.images.length + '/' + maxImage}`), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+    }, values.images.length >= maxImage ? `Достигнут предел ${values.images.length + '/' + maxImage}` : `Добавить изображение ${values.images.length + '/' + maxImage}`), /*#__PURE__*/ _reactDefault.default.createElement("input", {
         type: "file",
         multiple: true,
         name: "image",
@@ -45205,7 +45218,7 @@ const FormThing = (props)=>{
         onChange: onImage,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 225,
+            lineNumber: 227,
             columnNumber: 13
         },
         __self: undefined
@@ -45213,7 +45226,7 @@ const FormThing = (props)=>{
         className: "ButtonContainer",
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 234,
+            lineNumber: 236,
             columnNumber: 11
         },
         __self: undefined
@@ -45224,21 +45237,21 @@ const FormThing = (props)=>{
         },
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 235,
+            lineNumber: 237,
             columnNumber: 13
         },
         __self: undefined
-    }, "leave"), /*#__PURE__*/ _reactDefault.default.createElement(_elements.ButtonPositive, {
+    }, "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F"), /*#__PURE__*/ _reactDefault.default.createElement(_elements.ButtonPositive, {
         type: "submit",
         onSubmit: onSubmit,
         disabled: loadImage,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 243,
+            lineNumber: 245,
             columnNumber: 13
         },
         __self: undefined
-    }, "Send")))));
+    }, "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C")))));
 };
 _s(FormThing, "KoQYUTzvv3shMvKJNLihB8knNmM=", false, function() {
     return [
@@ -45274,17 +45287,21 @@ const Form = _styledComponentsDefault.default.form`
 _c1 = Form;
 const Image = _styledComponentsDefault.default.div`
   flex: 1 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-top-left-radius: 0.4em;
   border-top-right-radius: 0.4em;
   overflow: hidden;
   box-shadow: 0 -2px 7px black;
-  background-image: url(${(props)=>props.image || _pictureSvgDefault.default
+  background-image: url(${(props)=>props.load ? '' : props.image || _pictureSvgDefault.default
 });
   background-position: center;
   background-repeat: no-repeat;
   background-size: ${(props)=>props.image ? 'cover' : 'contain'
 };
   transition: transform 0.3s ease;
+  cursor: pointer;
 `;
 _c2 = Image;
 const Fieldset = _styledComponentsDefault.default.fieldset`
@@ -45341,7 +45358,7 @@ const InputTitle = _styledComponentsDefault.default.input`
   }
 `;
 _c5 = InputTitle;
-const PublickCheckbox = _styledComponentsDefault.default.div`
+const PublicCheckbox = _styledComponentsDefault.default.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45350,7 +45367,7 @@ const PublickCheckbox = _styledComponentsDefault.default.div`
     display: none;
   }
 `;
-_c6 = PublickCheckbox;
+_c6 = PublicCheckbox;
 const PublicToggle = _styledComponentsDefault.default.label`
   transform: skew(-10deg);
   overflow: hidden;
@@ -45379,12 +45396,12 @@ const PublicToggle = _styledComponentsDefault.default.label`
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   }
   &:after {
-    content: 'ALL';
+    content: 'ВСЕ';
     left: ${(props)=>props.public ? '0%' : '100%'
 };
   }
   &:before {
-    content: 'ONLY ME';
+    content: 'ТОЛЬКО Я';
     left: ${(props)=>props.public ? '-100%' : '0%'
 };
   }
@@ -45416,29 +45433,12 @@ const AreaDescription = _styledComponentsDefault.default.textarea`
 `;
 _c8 = AreaDescription;
 const RatingContainer = _styledComponentsDefault.default.div`
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  span {
-    position: absolute;
-    font-size: 1em;
-    top: 0.5em;
-    right: 1em;
-    transform: translateY(-50%);
-    color: inherit;
-  }
+  flex: 1;
+  cursor: pointer;
+  padding: 0.2em
+  border-radius: 0.2em;
   ${({ error  })=>error && _additionalStyles.invalidError
 }
-`;
-_c9 = RatingContainer;
-const InputRating = _styledComponentsDefault.default.input`
-  flex: 1;
-  appearance: none;
-  cursor: pointer;
-  position: relative;
-  height: 3em;
-  border-radius: 0.2em;
-
   &:hover {
     background: hsl(35deg 40% 95%);
   }
@@ -45448,42 +45448,8 @@ const InputRating = _styledComponentsDefault.default.input`
   &:active {
     background: hsl(35deg 40% 85%);
   }
-
-  &::before {
-    content: 'Rating';
-    position: absolute;
-    font-size: 1em;
-    top: 0.5em;
-    left: 1em;
-    transform: translateY(-50%);
-    color: inherit;
-  }
-
-  &::-webkit-slider-runnable-track {
-    height: 1px;
-    width: 100%;
-    border-radius: 0.2em;
-    background-color: black;
-    appearance: none;
-    box-shadow: inset 0px 0px 4px hsl(31deg 20% 20%);
-    position: absolute;
-    bottom: 0;
-    transform: rotate(180deg) scale(-1, 1);
-  }
-  &::-webkit-slider-thumb {
-    appearance: none;
-    height: 1.5em;
-    background: linear-gradient(
-      to right,
-      hsl(240deg 30% 30%),
-      hsl(250deg 30% 50%)
-    );
-    width: 2px;
-    border-radius: 0.2em;
-    box-shadow: 2px 0px 4px hsl(240deg 30% 20%);
-  }
 `;
-_c10 = InputRating;
+_c9 = RatingContainer;
 const InputFileContainer = _styledComponentsDefault.default.li`
   input[type='file'] {
     visibility: hidden;
@@ -45512,7 +45478,7 @@ const InputFileContainer = _styledComponentsDefault.default.li`
 };
   }
 `;
-_c11 = InputFileContainer;
+_c10 = InputFileContainer;
 const ButtonContainer = _styledComponentsDefault.default.li`
   &.ButtonContainer {
     flex-direction: row;
@@ -45521,30 +45487,29 @@ const ButtonContainer = _styledComponentsDefault.default.li`
     margin-left: 0.5em;
   }
 `;
-_c12 = ButtonContainer;
-exports.default = _c13 = _reactRouterDom.withRouter(FormThing);
-var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11, _c12, _c13;
+_c11 = ButtonContainer;
+exports.default = _c12 = _reactRouterDom.withRouter(FormThing);
+var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11, _c12;
 $RefreshReg$(_c, "FormThing");
 $RefreshReg$(_c1, "Form");
 $RefreshReg$(_c2, "Image");
 $RefreshReg$(_c3, "Fieldset");
 $RefreshReg$(_c4, "List");
 $RefreshReg$(_c5, "InputTitle");
-$RefreshReg$(_c6, "PublickCheckbox");
+$RefreshReg$(_c6, "PublicCheckbox");
 $RefreshReg$(_c7, "PublicToggle");
 $RefreshReg$(_c8, "AreaDescription");
 $RefreshReg$(_c9, "RatingContainer");
-$RefreshReg$(_c10, "InputRating");
-$RefreshReg$(_c11, "InputFileContainer");
-$RefreshReg$(_c12, "ButtonContainer");
-$RefreshReg$(_c13, "%default%");
+$RefreshReg$(_c10, "InputFileContainer");
+$RefreshReg$(_c11, "ButtonContainer");
+$RefreshReg$(_c12, "%default%");
 
   $parcel$ReactRefreshHelpers$b79e.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","react-router-dom":"cHIiW","./elements":"k3ebc","./CategorySelection":"nyAeq","../hooks/useAlert":"jYsML","../hooks/useValidate":"knD9e","./styled/additionalStyles":"2ISYd","../const":"fsDi5","../rest/loadImage":"4Fk0y","../img/picture.svg":"joAsO","./ConstrainPointer":"8Ta8b","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"nyAeq":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","react-router-dom":"cHIiW","./elements":"k3ebc","./CategorySelection":"nyAeq","../hooks/useAlert":"jYsML","../hooks/useValidate":"knD9e","./styled/additionalStyles":"2ISYd","../const":"fsDi5","../rest/loadImage":"4Fk0y","../img/picture.svg":"joAsO","./ConstrainPointer":"8Ta8b","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./loaders/SpinnerLoader":"1yvWQ","./RatingField":"6Lji7"}],"nyAeq":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b083 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45565,6 +45530,11 @@ var _breadCrumpsForFormDefault = parcelHelpers.interopDefault(_breadCrumpsForFor
 var _inputDatalist = require("./InputDatalist");
 var _inputDatalistDefault = parcelHelpers.interopDefault(_inputDatalist);
 var _s = $RefreshSig$();
+const arrayTrimmedByValue = (value, array)=>{
+    const index = array.indexOf(value);
+    trimArray = array.slice(0, index + 1);
+    return trimArray;
+};
 const CategorySelection = (props)=>{
     _s();
     const lastIdCategories = props.categories[props.categories.length - 1];
@@ -45592,7 +45562,7 @@ const CategorySelection = (props)=>{
     if (error) return /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "src/components/CategorySelection.js",
-            lineNumber: 29,
+            lineNumber: 35,
             columnNumber: 12
         },
         __self: undefined
@@ -45600,14 +45570,14 @@ const CategorySelection = (props)=>{
     return /*#__PURE__*/ _reactDefault.default.createElement(Wrapper, {
         __source: {
             fileName: "src/components/CategorySelection.js",
-            lineNumber: 32,
+            lineNumber: 38,
             columnNumber: 5
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement(Path, {
         __source: {
             fileName: "src/components/CategorySelection.js",
-            lineNumber: 33,
+            lineNumber: 39,
             columnNumber: 7
         },
         __self: undefined
@@ -45621,15 +45591,15 @@ const CategorySelection = (props)=>{
         },
         __source: {
             fileName: "src/components/CategorySelection.js",
-            lineNumber: 34,
+            lineNumber: 40,
             columnNumber: 9
         },
         __self: undefined
     })), /*#__PURE__*/ _reactDefault.default.createElement(_inputDatalistDefault.default, {
         loading: loading,
         list: loading ? [] : data1.category.descendants,
-        labelText: 'Choose category',
-        inputPlaceholder: 'Enter category name',
+        labelText: 'Выбор категории',
+        inputPlaceholder: 'Введите название категории',
         actionWithReturnValue: (cat)=>{
             props.setCategories([
                 ...props.categories,
@@ -45652,7 +45622,7 @@ const CategorySelection = (props)=>{
         },
         __source: {
             fileName: "src/components/CategorySelection.js",
-            lineNumber: 42,
+            lineNumber: 48,
             columnNumber: 7
         },
         __self: undefined
@@ -45680,11 +45650,6 @@ const Path = _styledComponentsDefault.default.div`
   flex: 1;
 `;
 _c2 = Path;
-const arrayTrimmedByValue = (value, array)=>{
-    const index = array.indexOf(value);
-    trimArray = array.slice(0, index + 1);
-    return trimArray;
-};
 var _c, _c1, _c2;
 $RefreshReg$(_c, "CategorySelection");
 $RefreshReg$(_c1, "Wrapper");
@@ -45718,10 +45683,6 @@ const Item2 = _styledComponentsDefault.default(_breadCrumps.Item)`
   span {
     display: inline-block;
     padding: 0.4em 0.7em;
-    font-size: 0.9em;
-    @media (max-width: 400px) {
-      font-size: 0.7em;
-    }
   }
 `;
 _c1 = Item2;
@@ -45742,7 +45703,7 @@ const Crumbs = (props)=>{
         },
         __source: {
             fileName: "src/components/BreadCrumpsForForm.js",
-            lineNumber: 28,
+            lineNumber: 24,
             columnNumber: 5
         },
         __self: undefined
@@ -45762,7 +45723,7 @@ const BreadCrumbsForForm = (props)=>{
     return /*#__PURE__*/ _reactDefault.default.createElement(Wrapper2, {
         __source: {
             fileName: "src/components/BreadCrumpsForForm.js",
-            lineNumber: 42,
+            lineNumber: 38,
             columnNumber: 5
         },
         __self: undefined
@@ -45771,7 +45732,7 @@ const BreadCrumbsForForm = (props)=>{
             key: cat,
             __source: {
                 fileName: "src/components/BreadCrumpsForForm.js",
-                lineNumber: 46,
+                lineNumber: 42,
                 columnNumber: 13
             },
             __self: undefined
@@ -45780,7 +45741,7 @@ const BreadCrumbsForForm = (props)=>{
             goTo: goTo,
             __source: {
                 fileName: "src/components/BreadCrumpsForForm.js",
-                lineNumber: 47,
+                lineNumber: 43,
                 columnNumber: 15
             },
             __self: undefined
@@ -46028,7 +45989,191 @@ $RefreshReg$(_c1, "Wrapper");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"juWSf":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1yvWQ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b095 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b095.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _keyframes = require("../styled/keyframes");
+const Spinner = _styledComponentsDefault.default.div`
+  width: 12em;
+  height: 12em;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 2em solid;
+  box-sizing: border-box;
+  animation: ${_keyframes.spinner} 1s linear infinite alternate;
+`;
+_c = Spinner;
+const SpinnerLoader = ()=>{
+    return /*#__PURE__*/ _reactDefault.default.createElement(Spinner, {
+        __source: {
+            fileName: "src/components/loaders/SpinnerLoader.js",
+            lineNumber: 17,
+            columnNumber: 10
+        },
+        __self: undefined
+    });
+};
+_c1 = SpinnerLoader;
+exports.default = SpinnerLoader;
+var _c, _c1;
+$RefreshReg$(_c, "Spinner");
+$RefreshReg$(_c1, "SpinnerLoader");
+
+  $parcel$ReactRefreshHelpers$b095.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../styled/keyframes":"60eli"}],"6Lji7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$84cb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$84cb.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _elements = require("./elements");
+const RatingField = (props)=>{
+    const { rating , change  } = props;
+    return /*#__PURE__*/ _reactDefault.default.createElement(Wrapper, {
+        tabIndex: 0,
+        __source: {
+            fileName: "src/components/RatingField.js",
+            lineNumber: 8,
+            columnNumber: 5
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(CaptionRating, {
+        __source: {
+            fileName: "src/components/RatingField.js",
+            lineNumber: 9,
+            columnNumber: 7
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        __source: {
+            fileName: "src/components/RatingField.js",
+            lineNumber: 10,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, "\u0420\u0435\u0439\u0442\u0438\u043D\u0433"), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        __source: {
+            fileName: "src/components/RatingField.js",
+            lineNumber: 11,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(RatingNum, {
+        __source: {
+            fileName: "src/components/RatingField.js",
+            lineNumber: 12,
+            columnNumber: 11
+        },
+        __self: undefined
+    }, " ", rating), " / 10")), /*#__PURE__*/ _reactDefault.default.createElement(StarsContainer, {
+        __source: {
+            fileName: "src/components/RatingField.js",
+            lineNumber: 15,
+            columnNumber: 7
+        },
+        __self: undefined
+    }, new Array(10).fill(null).map((item, i)=>/*#__PURE__*/ _reactDefault.default.createElement(EmptyStar, {
+            key: i,
+            onClick: ()=>change(i + 1)
+            ,
+            __source: {
+                fileName: "src/components/RatingField.js",
+                lineNumber: 17,
+                columnNumber: 11
+            },
+            __self: undefined
+        }, i + 1 <= rating ? /*#__PURE__*/ _reactDefault.default.createElement(_elements.StarActive, {
+            __source: {
+                fileName: "src/components/RatingField.js",
+                lineNumber: 18,
+                columnNumber: 32
+            },
+            __self: undefined
+        }) : /*#__PURE__*/ _reactDefault.default.createElement(_elements.Star, {
+            __source: {
+                fileName: "src/components/RatingField.js",
+                lineNumber: 18,
+                columnNumber: 49
+            },
+            __self: undefined
+        }))
+    )));
+};
+_c = RatingField;
+exports.default = RatingField;
+const Wrapper = _styledComponentsDefault.default.div`
+  user-select: none;
+  &:hover {
+    background: hsl(35deg 40% 95%);
+  }
+  &:focus {
+    background: hsl(35deg 40% 95%);
+  }
+  &:active {
+    background: hsl(35deg 40% 85%);
+  }
+`;
+_c1 = Wrapper;
+const StarsContainer = _styledComponentsDefault.default.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+`;
+_c2 = StarsContainer;
+const EmptyStar = _styledComponentsDefault.default.div`
+  font-size: 2em;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+`;
+_c3 = EmptyStar;
+const CaptionRating = _styledComponentsDefault.default.div`
+  display: flex;
+  justify-content: space-between;
+`;
+_c4 = CaptionRating;
+const RatingNum = _styledComponentsDefault.default.span`
+  font-size: 1.3em;
+`;
+_c5 = RatingNum;
+var _c, _c1, _c2, _c3, _c4, _c5;
+$RefreshReg$(_c, "RatingField");
+$RefreshReg$(_c1, "Wrapper");
+$RefreshReg$(_c2, "StarsContainer");
+$RefreshReg$(_c3, "EmptyStar");
+$RefreshReg$(_c4, "CaptionRating");
+$RefreshReg$(_c5, "RatingNum");
+
+  $parcel$ReactRefreshHelpers$84cb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","styled-components":"1U3k6","./elements":"k3ebc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"juWSf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0062 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -46282,7 +46427,7 @@ const ThingPage = (props)=>{
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement(_elements.ButtonNegative, {
         onClick: ()=>{
-            props.history.push('/');
+            props.history.goBack();
         },
         __source: {
             fileName: "src/pages/thing.js",
@@ -46290,7 +46435,7 @@ const ThingPage = (props)=>{
             columnNumber: 9
         },
         __self: undefined
-    }, "Leave"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonImportantActionDefault.default, {
+    }, "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonImportantActionDefault.default, {
         action: ()=>deleteThing({
                 variables: {
                     id: id
@@ -46303,7 +46448,7 @@ const ThingPage = (props)=>{
             columnNumber: 9
         },
         __self: undefined
-    }, "Delete"), /*#__PURE__*/ _reactDefault.default.createElement(_elements.ButtonPositive, {
+    }, "\u0423\u0434\u0430\u043B\u0438\u0442\u044C"), /*#__PURE__*/ _reactDefault.default.createElement(_elements.ButtonPositive, {
         onClick: ()=>{
             props.history.push(`/edit/${id}`);
         },
@@ -46313,7 +46458,7 @@ const ThingPage = (props)=>{
             columnNumber: 9
         },
         __self: undefined
-    }, "Edit")));
+    }, "\u0420\u0435\u0434\u0430\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C")));
 };
 _s(ThingPage, "rNkNQmOfo8GHyPvJTbDqhMlKZ2A=", false, function() {
     return [
