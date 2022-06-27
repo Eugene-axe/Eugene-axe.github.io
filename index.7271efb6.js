@@ -27773,7 +27773,7 @@ const Navigation = (props)=>{
             columnNumber: 7
         },
         __self: undefined
-    }, "Menu"), /*#__PURE__*/ _reactDefault.default.createElement("ul", {
+    }, "\u041C\u0435\u043D\u044E"), /*#__PURE__*/ _reactDefault.default.createElement("ul", {
         onClick: ()=>{
             setHide(true);
         },
@@ -42216,7 +42216,7 @@ const CategoriesFeed = (props)=>{
             columnNumber: 9
         },
         __self: undefined
-    }, "Back"), /*#__PURE__*/ _reactDefault.default.createElement(_categoriesListDefault.default, {
+    }, "\u041D\u0430\u0432\u0435\u0440\u0445"), /*#__PURE__*/ _reactDefault.default.createElement(_categoriesListDefault.default, {
         catsList: category.descendants,
         goToLink: goToLink,
         setIdCat: setIdCat,
@@ -44832,6 +44832,8 @@ var _useAlert = require("../hooks/useAlert");
 var _useAlertDefault = parcelHelpers.interopDefault(_useAlert);
 var _useValidate = require("../hooks/useValidate");
 var _useValidateDefault = parcelHelpers.interopDefault(_useValidate);
+var _useModal = require("../hooks/useModal");
+var _useModalDefault = parcelHelpers.interopDefault(_useModal);
 var _additionalStyles = require("./styled/additionalStyles");
 var _const = require("../const");
 var _loadImage = require("../rest/loadImage");
@@ -44844,6 +44846,8 @@ var _spinnerLoader = require("./loaders/SpinnerLoader");
 var _spinnerLoaderDefault = parcelHelpers.interopDefault(_spinnerLoader);
 var _ratingField = require("./RatingField");
 var _ratingFieldDefault = parcelHelpers.interopDefault(_ratingField);
+var _modalImage = require("./ModalImage");
+var _modalImageDefault = parcelHelpers.interopDefault(_modalImage);
 var _s = $RefreshSig$();
 const FormThing = (props)=>{
     _s();
@@ -44868,6 +44872,7 @@ const FormThing = (props)=>{
     });
     const { validate , errors , isPermit  } = _useValidateDefault.default();
     const { setAlert  } = _useAlertDefault.default();
+    const { setModalContent , closeModal , openModal  } = _useModalDefault.default();
     const [loadImage, setLoadImage] = _react.useState(false);
     const onChange = (event)=>{
         setValues({
@@ -44935,7 +44940,7 @@ const FormThing = (props)=>{
         className: "form-thing",
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 100,
+            lineNumber: 105,
             columnNumber: 5
         },
         __self: undefined
@@ -44943,46 +44948,62 @@ const FormThing = (props)=>{
         load: loadImage,
         image: values.images[values.images.length - 1],
         onClick: ()=>{
-            document.getElementById('thing-image').click();
+            if (!values.images.length) document.getElementById('thing-image').click();
+            else {
+                setModalContent(/*#__PURE__*/ _reactDefault.default.createElement(_modalImageDefault.default, {
+                    closeModal: closeModal,
+                    arrayImage: values.images,
+                    currentImage: values.images[values.images.length - 1],
+                    objAddActions: {
+                        deleteImage: (image)=>{
+                            setValues({
+                                ...values,
+                                images: deleteFromArray(values.images, image)
+                            });
+                        }
+                    }
+                }));
+                openModal();
+            }
         },
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 101,
+            lineNumber: 106,
             columnNumber: 7
         },
         __self: undefined
     }, loadImage && /*#__PURE__*/ _reactDefault.default.createElement(_spinnerLoaderDefault.default, {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 108,
+            lineNumber: 132,
             columnNumber: 23
         },
         __self: undefined
     })), /*#__PURE__*/ _reactDefault.default.createElement(Fieldset, {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 110,
+            lineNumber: 134,
             columnNumber: 7
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("legend", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 111,
+            lineNumber: 135,
             columnNumber: 9
         },
         __self: undefined
     }, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0432\u0435\u0449\u0438"), /*#__PURE__*/ _reactDefault.default.createElement(List, {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 112,
+            lineNumber: 136,
             columnNumber: 9
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 113,
+            lineNumber: 137,
             columnNumber: 11
         },
         __self: undefined
@@ -44995,7 +45016,7 @@ const FormThing = (props)=>{
         message: '',
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 114,
+            lineNumber: 138,
             columnNumber: 13
         },
         __self: undefined
@@ -45003,7 +45024,7 @@ const FormThing = (props)=>{
         htmlFor: "thing-title",
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 122,
+            lineNumber: 146,
             columnNumber: 13
         },
         __self: undefined
@@ -45028,14 +45049,14 @@ const FormThing = (props)=>{
         },
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 123,
+            lineNumber: 147,
             columnNumber: 13
         },
         __self: undefined
     })), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 144,
+            lineNumber: 168,
             columnNumber: 11
         },
         __self: undefined
@@ -45049,28 +45070,28 @@ const FormThing = (props)=>{
         categories: values.category,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 145,
+            lineNumber: 169,
             columnNumber: 13
         },
         __self: undefined
     })), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 152,
+            lineNumber: 176,
             columnNumber: 11
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement(PublicCheckbox, {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 153,
+            lineNumber: 177,
             columnNumber: 13
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 154,
+            lineNumber: 178,
             columnNumber: 15
         },
         __self: undefined
@@ -45079,7 +45100,7 @@ const FormThing = (props)=>{
         public: values.public,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 155,
+            lineNumber: 179,
             columnNumber: 15
         },
         __self: undefined
@@ -45094,14 +45115,14 @@ const FormThing = (props)=>{
         },
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 156,
+            lineNumber: 180,
             columnNumber: 15
         },
         __self: undefined
     }))), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 165,
+            lineNumber: 189,
             columnNumber: 11
         },
         __self: undefined
@@ -45114,7 +45135,7 @@ const FormThing = (props)=>{
         message: '',
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 166,
+            lineNumber: 190,
             columnNumber: 13
         },
         __self: undefined
@@ -45122,7 +45143,7 @@ const FormThing = (props)=>{
         htmlFor: "thing-description",
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 174,
+            lineNumber: 198,
             columnNumber: 13
         },
         __self: undefined
@@ -45147,14 +45168,14 @@ const FormThing = (props)=>{
         error: errors.description,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 175,
+            lineNumber: 199,
             columnNumber: 13
         },
         __self: undefined
     })), /*#__PURE__*/ _reactDefault.default.createElement("li", {
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 196,
+            lineNumber: 220,
             columnNumber: 11
         },
         __self: undefined
@@ -45163,7 +45184,7 @@ const FormThing = (props)=>{
         ref: rating,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 197,
+            lineNumber: 221,
             columnNumber: 13
         },
         __self: undefined
@@ -45189,7 +45210,7 @@ const FormThing = (props)=>{
         },
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 198,
+            lineNumber: 222,
             columnNumber: 15
         },
         __self: undefined
@@ -45197,7 +45218,7 @@ const FormThing = (props)=>{
         maxCount: values.images.length >= maxImage,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 221,
+            lineNumber: 245,
             columnNumber: 11
         },
         __self: undefined
@@ -45205,7 +45226,7 @@ const FormThing = (props)=>{
         htmlFor: "thing-image",
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 222,
+            lineNumber: 246,
             columnNumber: 13
         },
         __self: undefined
@@ -45218,7 +45239,7 @@ const FormThing = (props)=>{
         onChange: onImage,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 227,
+            lineNumber: 253,
             columnNumber: 13
         },
         __self: undefined
@@ -45226,7 +45247,7 @@ const FormThing = (props)=>{
         className: "ButtonContainer",
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 236,
+            lineNumber: 262,
             columnNumber: 11
         },
         __self: undefined
@@ -45237,7 +45258,7 @@ const FormThing = (props)=>{
         },
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 237,
+            lineNumber: 263,
             columnNumber: 13
         },
         __self: undefined
@@ -45247,16 +45268,17 @@ const FormThing = (props)=>{
         disabled: loadImage,
         __source: {
             fileName: "src/components/FormThing.js",
-            lineNumber: 245,
+            lineNumber: 271,
             columnNumber: 13
         },
         __self: undefined
     }, "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C")))));
 };
-_s(FormThing, "KoQYUTzvv3shMvKJNLihB8knNmM=", false, function() {
+_s(FormThing, "stOcSBCtMCVcqTUpfOxvxIZV4zM=", false, function() {
     return [
         _useValidateDefault.default,
-        _useAlertDefault.default
+        _useAlertDefault.default,
+        _useModalDefault.default
     ];
 });
 _c = FormThing;
@@ -45489,6 +45511,10 @@ const ButtonContainer = _styledComponentsDefault.default.li`
 `;
 _c11 = ButtonContainer;
 exports.default = _c12 = _reactRouterDom.withRouter(FormThing);
+function deleteFromArray(array, delItem) {
+    return array.filter((item)=>item !== delItem
+    );
+}
 var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11, _c12;
 $RefreshReg$(_c, "FormThing");
 $RefreshReg$(_c1, "Form");
@@ -45509,7 +45535,7 @@ $RefreshReg$(_c12, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","react-router-dom":"cHIiW","./elements":"k3ebc","./CategorySelection":"nyAeq","../hooks/useAlert":"jYsML","../hooks/useValidate":"knD9e","./styled/additionalStyles":"2ISYd","../const":"fsDi5","../rest/loadImage":"4Fk0y","../img/picture.svg":"joAsO","./ConstrainPointer":"8Ta8b","./loaders/SpinnerLoader":"1yvWQ","./RatingField":"6Lji7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"nyAeq":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","react-router-dom":"cHIiW","./elements":"k3ebc","./CategorySelection":"nyAeq","../hooks/useAlert":"jYsML","../hooks/useValidate":"knD9e","./styled/additionalStyles":"2ISYd","../const":"fsDi5","../rest/loadImage":"4Fk0y","../img/picture.svg":"joAsO","./ConstrainPointer":"8Ta8b","./loaders/SpinnerLoader":"1yvWQ","./RatingField":"6Lji7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../hooks/useModal":"giSQw","./ModalImage":"kKKqF"}],"nyAeq":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b083 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -46173,7 +46199,441 @@ $RefreshReg$(_c5, "RatingNum");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","./elements":"k3ebc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"juWSf":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","./elements":"k3ebc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"giSQw":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$07e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$07e8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _modalContext = require("../context/ModalContext");
+var _modalContextDefault = parcelHelpers.interopDefault(_modalContext);
+var _s = $RefreshSig$();
+const useModal = ()=>{
+    _s();
+    return _react.useContext(_modalContextDefault.default);
+};
+_s(useModal, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
+exports.default = useModal;
+
+  $parcel$ReactRefreshHelpers$07e8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","../context/ModalContext":"fvtcr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fvtcr":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1d54 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1d54.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ModalProvider", ()=>ModalProvider
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const ModalContext = /*#__PURE__*/ _react.createContext({
+    content: ()=>{},
+    isHide: true
+});
+const APPEARANCE_TIME = 100;
+const ModalProvider = ({ children  })=>{
+    _s();
+    const [content, setContent] = _react.useState(()=>/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null)
+    );
+    const [isHide, setHide] = _react.useState(true);
+    const [opacity, setOpacity] = _react.useState(0);
+    const openModal = ()=>{
+        setHide(false);
+        setTimeout(()=>{
+            setOpacity(1);
+        }, APPEARANCE_TIME);
+    };
+    const closeModal = ()=>{
+        setOpacity(0);
+        setTimeout(()=>{
+            setHide(true);
+        }, APPEARANCE_TIME);
+    };
+    return /*#__PURE__*/ _reactDefault.default.createElement(ModalContext.Provider, {
+        value: {
+            APPEARANCE_TIME,
+            isHide,
+            openModal,
+            closeModal,
+            opacity,
+            content,
+            setModalContent: setContent
+        },
+        __source: {
+            fileName: "src/context/ModalContext.js",
+            lineNumber: 29,
+            columnNumber: 5
+        },
+        __self: undefined
+    }, children);
+};
+_s(ModalProvider, "NoHm2ESkQlbTKuOFYSkVFxMe1IQ=");
+_c = ModalProvider;
+exports.default = ModalContext;
+var _c;
+$RefreshReg$(_c, "ModalProvider");
+
+  $parcel$ReactRefreshHelpers$1d54.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kKKqF":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6741.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _additionalStyles = require("./styled/additionalStyles");
+var _buttonImportantAction = require("./elements/ButtonImportantAction");
+var _buttonImportantActionDefault = parcelHelpers.interopDefault(_buttonImportantAction);
+var _s = $RefreshSig$();
+const walkArray = (array, image, increment = 0)=>{
+    const index = array.findIndex((item)=>{
+        return item === image;
+    });
+    if (index + +increment >= array.length) return array[0];
+    if (index + +increment < 0) return array[array.length - 1];
+    return array[index + +increment];
+};
+const ModalImage = (props)=>{
+    _s();
+    const { closeModal , arrayImage , currentImage , objAddActions  } = props;
+    const [image, setImage] = _react.useState(currentImage);
+    const imgRef = _react.useRef();
+    const btnsRef = _react.useRef();
+    const addAcionContainer = _react.useRef();
+    _react.useEffect(()=>{
+        setCoordImg('top: 0% ; left: 0% ');
+    }, [
+        image
+    ]);
+    const [startX1, setStartX] = _react.useState();
+    const [startY1, setStartY] = _react.useState();
+    const [coordImg, setCoordImg] = _react.useState('top : -150%');
+    const changeImage = (increment)=>{
+        if (arrayImage.length === 1) {
+            setCoordImg(`left : ${increment * 5}vw`);
+            setTimeout(()=>{
+                setCoordImg('left : 0%');
+            }, 200);
+            return;
+        }
+        setCoordImg(`left : ${increment * 100}vw`);
+        setTimeout(()=>{
+            setCoordImg('top : -100vh');
+        }, 300);
+        setTimeout(()=>{
+            setImage(walkArray(arrayImage, image, increment));
+        }, 350);
+    };
+    const touchStart = (event)=>{
+        const startX = Math.round(event.changedTouches[0].clientX);
+        setStartX(startX);
+        const startY = Math.round(event.changedTouches[0].clientY);
+        setStartY(startY);
+    };
+    const touchEnd = (event)=>{
+        const endX = Math.round(event.changedTouches[0].clientX);
+        const endY = Math.round(event.changedTouches[0].clientY);
+        if (startX1 - endX < -100) changeImage(1);
+        if (startX1 - endX > 100) changeImage(-1);
+        const diffY = startY1 - endY;
+        if (diffY > 150 || diffY < -150) {
+            const direction = diffY > 0 ? -1 : 1;
+            setCoordImg(`top : ${direction * 100}vh `);
+            setTimeout(()=>{
+                closeModal();
+            }, 300);
+        }
+    };
+    const dragStart = (event)=>{
+        event.preventDefault();
+    };
+    return /*#__PURE__*/ _reactDefault.default.createElement(Wrapper, {
+        onClick: (event)=>{
+            if (![
+                imgRef.current,
+                ...btnsRef.current.children,
+                ...addAcionContainer.current.children
+            ].includes(event.target)) closeModal();
+        },
+        __source: {
+            fileName: "src/components/ModalImage.js",
+            lineNumber: 72,
+            columnNumber: 5
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(ImgContainer, {
+        onTouchStart: touchStart,
+        onTouchEnd: touchEnd,
+        coord: coordImg,
+        __source: {
+            fileName: "src/components/ModalImage.js",
+            lineNumber: 84,
+            columnNumber: 7
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+        src: image,
+        draggable: true,
+        onDragStart: dragStart,
+        ref: imgRef,
+        __source: {
+            fileName: "src/components/ModalImage.js",
+            lineNumber: 89,
+            columnNumber: 9
+        },
+        __self: undefined
+    })), /*#__PURE__*/ _reactDefault.default.createElement(BtnContainer, {
+        ref: btnsRef,
+        __source: {
+            fileName: "src/components/ModalImage.js",
+            lineNumber: 96,
+            columnNumber: 7
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement(Arrow, {
+        onClick: ()=>{
+            changeImage(-1);
+        },
+        __source: {
+            fileName: "src/components/ModalImage.js",
+            lineNumber: 97,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, "\u2039"), /*#__PURE__*/ _reactDefault.default.createElement(ButtonClose, {
+        onClick: ()=>{
+            closeModal();
+        },
+        __source: {
+            fileName: "src/components/ModalImage.js",
+            lineNumber: 104,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, "close"), /*#__PURE__*/ _reactDefault.default.createElement(Arrow, {
+        onClick: ()=>{
+            changeImage(1);
+        },
+        __source: {
+            fileName: "src/components/ModalImage.js",
+            lineNumber: 111,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, "\u203A")), /*#__PURE__*/ _reactDefault.default.createElement(AddActionContainer, {
+        ref: addAcionContainer,
+        __source: {
+            fileName: "src/components/ModalImage.js",
+            lineNumber: 119,
+            columnNumber: 7
+        },
+        __self: undefined
+    }, objAddActions?.deleteImage && /*#__PURE__*/ _reactDefault.default.createElement(_buttonImportantActionDefault.default, {
+        action: ()=>{
+            objAddActions.deleteImage(image);
+            closeModal();
+        },
+        __source: {
+            fileName: "src/components/ModalImage.js",
+            lineNumber: 121,
+            columnNumber: 11
+        },
+        __self: undefined
+    }, "delete")));
+};
+_s(ModalImage, "/Qbs4fUilR7g/HN1BsqXK+f38Tc=");
+_c = ModalImage;
+exports.default = ModalImage;
+const Wrapper = _styledComponentsDefault.default.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+_c1 = Wrapper;
+const ImgContainer = _styledComponentsDefault.default.div`
+  flex: 1 1 90%;
+  max-height: 88%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  @media (max-width: 450px) {
+    max-height: 100%;
+  }
+
+  img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: contain;
+    box-shadow: 0px 0px 15px black;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    ${({ coord  })=>coord
+};
+  }
+`;
+_c2 = ImgContainer;
+const BtnContainer = _styledComponentsDefault.default.div`
+  flex: 1 1 10%;
+  padding-top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 20em;
+  @media (max-width: 500px) {
+    display: none;
+  }
+`;
+_c3 = BtnContainer;
+const ButtonClose = _styledComponentsDefault.default.button`
+  ${_additionalStyles.ButtonWrapper}
+  background: transparent;
+  flex-grow: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-weight: bold;
+
+  :hover {
+    box-shadow: 0px 0px 15px black;
+    text-shadow: 0px 0px 15px black;
+  }
+  :active {
+    color: #aaa;
+    border-color: #aaa;
+  }
+`;
+_c4 = ButtonClose;
+const Arrow = _styledComponentsDefault.default.span`
+  width: 1em;
+  height: 1em;
+  font-size: 2em;
+  line-height: 0.7;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  :hover {
+    box-shadow: 0px 0px 15px black;
+    text-shadow: 0px 0px 15px black;
+  }
+  :active {
+    color: #aaa;
+    border-color: #aaa;
+  }
+`;
+_c5 = Arrow;
+const AddActionContainer = _styledComponentsDefault.default.div`
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  right: 0;
+`;
+_c6 = AddActionContainer;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6;
+$RefreshReg$(_c, "ModalImage");
+$RefreshReg$(_c1, "Wrapper");
+$RefreshReg$(_c2, "ImgContainer");
+$RefreshReg$(_c3, "BtnContainer");
+$RefreshReg$(_c4, "ButtonClose");
+$RefreshReg$(_c5, "Arrow");
+$RefreshReg$(_c6, "AddActionContainer");
+
+  $parcel$ReactRefreshHelpers$6741.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","styled-components":"1U3k6","./styled/additionalStyles":"2ISYd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./elements/ButtonImportantAction":"dbBrq"}],"dbBrq":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c885 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c885.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _useAlert = require("../../hooks/useAlert");
+var _useAlertDefault = parcelHelpers.interopDefault(_useAlert);
+var _additionalStyles = require("../styled/additionalStyles");
+var _const = require("../../const");
+const ButtonDander = _styledComponentsDefault.default.button`
+  ${_additionalStyles.ButtonWrapper}
+  flex: 1;
+  background: linear-gradient(to right, hsl(21deg 40% 50%), hsl(26deg 40% 56%));
+
+  &:hover {
+    background: linear-gradient(
+      to right,
+      hsl(21deg 60% 50%),
+      hsl(26deg 60% 50%)
+    );
+  }
+  ${({ ready  })=>ready && _additionalStyles.readyStyle
+}
+`;
+_c = ButtonDander;
+exports.default = function({ children , action  }) {
+    const [ready, setReady] = _react.useState(false);
+    const { setAlert  } = _useAlertDefault.default();
+    return /*#__PURE__*/ _reactDefault.default.createElement(ButtonDander, {
+        ready: ready,
+        onClick: ()=>{
+            if (!ready) {
+                setReady(true);
+                setAlert('Press one-more time', _const.NEUTRAL);
+            } else action();
+        },
+        __source: {
+            fileName: "src/components/elements/ButtonImportantAction.js",
+            lineNumber: 26,
+            columnNumber: 5
+        },
+        __self: this
+    }, children);
+};
+var _c;
+$RefreshReg$(_c, "ButtonDander");
+
+  $parcel$ReactRefreshHelpers$c885.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","styled-components":"1U3k6","../../hooks/useAlert":"jYsML","../styled/additionalStyles":"2ISYd","../../const":"fsDi5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"juWSf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0062 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -46222,8 +46682,9 @@ const ThingPage = (props)=>{
         document.title = 'Вещь - Thing Rating';
     }, []);
     const [imgMain, setImgMain] = _react.useState('');
+    const [readDescription, setReadDescription] = _react.useState(false);
     const { setAlert  } = _useAlertDefault.default();
-    const { setContent , closeModal , openModal  } = _useModalDefault.default();
+    const { setModalContent , closeModal , openModal  } = _useModalDefault.default();
     const [deleteThing] = _client.useMutation(_mutation.DELETE_THING, {
         onCompleted: (data)=>{
             setAlert('Thing deleted', _const.POSITIVE);
@@ -46258,7 +46719,7 @@ const ThingPage = (props)=>{
     if (loading) return /*#__PURE__*/ _reactDefault.default.createElement(_thingLoaderDefault.default, {
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 71,
+            lineNumber: 72,
             columnNumber: 23
         },
         __self: undefined
@@ -46266,7 +46727,7 @@ const ThingPage = (props)=>{
     if (error1) return /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 72,
+            lineNumber: 73,
             columnNumber: 21
         },
         __self: undefined
@@ -46276,16 +46737,17 @@ const ThingPage = (props)=>{
     const nStar = 10 - thing1.rating;
     const date = _dayjsDefault.default(thing1.createdAt).format('DD.MM.YYYY [at] HH:mm:ss');
     return /*#__PURE__*/ _reactDefault.default.createElement(Wrapper, {
+        readDescription: readDescription,
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 80,
+            lineNumber: 81,
             columnNumber: 5
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement(PathContainer, {
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 81,
+            lineNumber: 82,
             columnNumber: 7
         },
         __self: undefined
@@ -46293,28 +46755,28 @@ const ThingPage = (props)=>{
         catList: thing1.category,
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 82,
+            lineNumber: 83,
             columnNumber: 9
         },
         __self: undefined
     })), /*#__PURE__*/ _reactDefault.default.createElement(Title, {
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 84,
+            lineNumber: 85,
             columnNumber: 7
         },
         __self: undefined
     }, thing1.title), /*#__PURE__*/ _reactDefault.default.createElement(RatingContainer, {
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 85,
+            lineNumber: 86,
             columnNumber: 7
         },
         __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement(RatingStars, {
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 86,
+            lineNumber: 87,
             columnNumber: 9
         },
         __self: undefined
@@ -46322,7 +46784,7 @@ const ThingPage = (props)=>{
             key: i,
             __source: {
                 fileName: "src/pages/thing.js",
-                lineNumber: 88,
+                lineNumber: 89,
                 columnNumber: 13
             },
             __self: undefined
@@ -46331,7 +46793,7 @@ const ThingPage = (props)=>{
             key: i,
             __source: {
                 fileName: "src/pages/thing.js",
-                lineNumber: 91,
+                lineNumber: 92,
                 columnNumber: 58
             },
             __self: undefined
@@ -46340,7 +46802,7 @@ const ThingPage = (props)=>{
         className: "rating-num",
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 93,
+            lineNumber: 94,
             columnNumber: 9
         },
         __self: undefined
@@ -46348,35 +46810,42 @@ const ThingPage = (props)=>{
         className: "r-num",
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 94,
+            lineNumber: 95,
             columnNumber: 11
         },
         __self: undefined
     }, thing1.rating), " / 10")), /*#__PURE__*/ _reactDefault.default.createElement(Description, {
-        __source: {
-            fileName: "src/pages/thing.js",
-            lineNumber: 97,
-            columnNumber: 7
+        tabIndex: 0,
+        onFocus: ()=>{
+            setReadDescription(true);
         },
-        __self: undefined
-    }, thing1.description), /*#__PURE__*/ _reactDefault.default.createElement(Footer, {
+        onBlur: ()=>{
+            setReadDescription(false);
+        },
         __source: {
             fileName: "src/pages/thing.js",
             lineNumber: 98,
             columnNumber: 7
         },
         __self: undefined
+    }, thing1.description), /*#__PURE__*/ _reactDefault.default.createElement(Footer, {
+        __source: {
+            fileName: "src/pages/thing.js",
+            lineNumber: 109,
+            columnNumber: 7
+        },
+        __self: undefined
     }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 99,
+            lineNumber: 110,
             columnNumber: 9
         },
         __self: undefined
     }, "By: ", thing1.author.username), /*#__PURE__*/ _reactDefault.default.createElement("span", {
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 100,
+            lineNumber: 111,
             columnNumber: 9
         },
         __self: undefined
@@ -46384,7 +46853,7 @@ const ThingPage = (props)=>{
         image: imgMain,
         onClick: ()=>{
             if (imgMain) {
-                setContent(/*#__PURE__*/ _reactDefault.default.createElement(_modalImageDefault.default, {
+                setModalContent(/*#__PURE__*/ _reactDefault.default.createElement(_modalImageDefault.default, {
                     closeModal: closeModal,
                     arrayImage: thing1.images,
                     currentImage: imgMain
@@ -46394,14 +46863,14 @@ const ThingPage = (props)=>{
         },
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 102,
+            lineNumber: 113,
             columnNumber: 7
         },
         __self: undefined
     }), /*#__PURE__*/ _reactDefault.default.createElement(PreviewImage, {
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 117,
+            lineNumber: 128,
             columnNumber: 7
         },
         __self: undefined
@@ -46413,7 +46882,7 @@ const ThingPage = (props)=>{
             },
             __source: {
                 fileName: "src/pages/thing.js",
-                lineNumber: 119,
+                lineNumber: 130,
                 columnNumber: 11
             },
             __self: undefined
@@ -46421,7 +46890,7 @@ const ThingPage = (props)=>{
     )), /*#__PURE__*/ _reactDefault.default.createElement(Buttons, {
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 128,
+            lineNumber: 139,
             columnNumber: 7
         },
         __self: undefined
@@ -46431,7 +46900,7 @@ const ThingPage = (props)=>{
         },
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 129,
+            lineNumber: 140,
             columnNumber: 9
         },
         __self: undefined
@@ -46444,7 +46913,7 @@ const ThingPage = (props)=>{
         ,
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 136,
+            lineNumber: 147,
             columnNumber: 9
         },
         __self: undefined
@@ -46454,13 +46923,13 @@ const ThingPage = (props)=>{
         },
         __source: {
             fileName: "src/pages/thing.js",
-            lineNumber: 141,
+            lineNumber: 152,
             columnNumber: 9
         },
         __self: undefined
-    }, "\u0420\u0435\u0434\u0430\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C")));
+    }, "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C")));
 };
-_s(ThingPage, "rNkNQmOfo8GHyPvJTbDqhMlKZ2A=", false, function() {
+_s(ThingPage, "oaIr8hSzvrMnkmD1EYAa3RLL0Z4=", false, function() {
     return [
         _useAlertDefault.default,
         _useModalDefault.default,
@@ -46500,8 +46969,10 @@ const Wrapper = _styledComponentsDefault.default.div`
     'buttons       .       ';
 
   @media (max-width: 850px) {
+    transition: grid-template-rows 0.2s ease;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 1fr 6fr 2fr 1fr 3fr 1em 1fr;
+    grid-template-rows: ${({ readDescription  })=>readDescription ? '2fr 1fr 6fr 2fr 1fr minmax( 8em , max-content ) 1em 2.5em' : '2fr 1fr 6fr 2fr 1fr 8em 1em 2.5em'
+};
     grid-template-areas:
       ' path        '
       ' title       '
@@ -46573,6 +47044,7 @@ const Description = _styledComponentsDefault.default.div`
   padding: 0.5em;
   min-height: 5em;
   overflow: hidden;
+  overflow-y: auto;
   white-space: pre-line;
 `;
 _c6 = Description;
@@ -47089,410 +47561,7 @@ $RefreshReg$(_c8, "Buttons");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","../styled/keyframes":"60eli","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dbBrq":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c885 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c885.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-var _useAlert = require("../../hooks/useAlert");
-var _useAlertDefault = parcelHelpers.interopDefault(_useAlert);
-var _additionalStyles = require("../styled/additionalStyles");
-var _const = require("../../const");
-const ButtonDander = _styledComponentsDefault.default.button`
-  ${_additionalStyles.ButtonWrapper}
-  flex: 1;
-  background: linear-gradient(to right, hsl(21deg 40% 50%), hsl(26deg 40% 56%));
-
-  &:hover {
-    background: linear-gradient(
-      to right,
-      hsl(21deg 60% 50%),
-      hsl(26deg 60% 50%)
-    );
-  }
-  ${({ ready  })=>ready && _additionalStyles.readyStyle
-}
-`;
-_c = ButtonDander;
-exports.default = function({ children , action  }) {
-    const [ready, setReady] = _react.useState(false);
-    const { setAlert  } = _useAlertDefault.default();
-    return /*#__PURE__*/ _reactDefault.default.createElement(ButtonDander, {
-        ready: ready,
-        onClick: ()=>{
-            if (!ready) {
-                setReady(true);
-                setAlert('Press one-more time', _const.NEUTRAL);
-            } else action();
-        },
-        __source: {
-            fileName: "src/components/elements/ButtonImportantAction.js",
-            lineNumber: 26,
-            columnNumber: 5
-        },
-        __self: this
-    }, children);
-};
-var _c;
-$RefreshReg$(_c, "ButtonDander");
-
-  $parcel$ReactRefreshHelpers$c885.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","styled-components":"1U3k6","../../hooks/useAlert":"jYsML","../styled/additionalStyles":"2ISYd","../../const":"fsDi5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kKKqF":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$6741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$6741.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-var _additionalStyles = require("./styled/additionalStyles");
-var _s = $RefreshSig$();
-const walkArray = (array, image, increment = 0)=>{
-    const index = array.findIndex((item)=>{
-        return item === image;
-    });
-    if (index + +increment >= array.length) return array[0];
-    if (index + +increment < 0) return array[array.length - 1];
-    return array[index + +increment];
-};
-const ModalImage = (props)=>{
-    _s();
-    const { closeModal , arrayImage , currentImage  } = props;
-    const [image, setImage] = _react.useState(currentImage);
-    const imgRef = _react.useRef();
-    const btnsRef = _react.useRef();
-    _react.useEffect(()=>{
-        setCoordImg('top: 0% ; left: 0% ');
-    }, [
-        image
-    ]);
-    const [startX1, setStartX] = _react.useState();
-    const [startY1, setStartY] = _react.useState();
-    const [coordImg, setCoordImg] = _react.useState('top : -150%');
-    const changeImage = (increment)=>{
-        if (arrayImage.length === 1) {
-            setCoordImg(`left : ${increment * 5}vw`);
-            setTimeout(()=>{
-                setCoordImg('left : 0%');
-            }, 200);
-            return;
-        }
-        setCoordImg(`left : ${increment * 100}vw`);
-        setTimeout(()=>{
-            setCoordImg('top : -100vh');
-        }, 300);
-        setTimeout(()=>{
-            setImage(walkArray(arrayImage, image, increment));
-        }, 350);
-    };
-    const touchStart = (event)=>{
-        const startX = Math.round(event.changedTouches[0].clientX);
-        setStartX(startX);
-        const startY = Math.round(event.changedTouches[0].clientY);
-        setStartY(startY);
-    };
-    const touchEnd = (event)=>{
-        const endX = Math.round(event.changedTouches[0].clientX);
-        const endY = Math.round(event.changedTouches[0].clientY);
-        if (startX1 - endX < -100) changeImage(1);
-        if (startX1 - endX > 100) changeImage(-1);
-        const diffY = startY1 - endY;
-        if (diffY > 150 || diffY < -150) {
-            const direction = diffY > 0 ? -1 : 1;
-            setCoordImg(`top : ${direction * 100}vh `);
-            setTimeout(()=>{
-                closeModal();
-            }, 300);
-        }
-    };
-    const dragStart = (event)=>{
-        event.preventDefault();
-    };
-    return /*#__PURE__*/ _reactDefault.default.createElement(Wrapper, {
-        onClick: (event)=>{
-            if (![
-                imgRef.current,
-                ...btnsRef.current.children
-            ].includes(event.target)) closeModal();
-        },
-        __source: {
-            fileName: "src/components/ModalImage.js",
-            lineNumber: 70,
-            columnNumber: 5
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _reactDefault.default.createElement(ImgContainer, {
-        onTouchStart: touchStart,
-        onTouchEnd: touchEnd,
-        coord: coordImg,
-        __source: {
-            fileName: "src/components/ModalImage.js",
-            lineNumber: 78,
-            columnNumber: 7
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
-        src: image,
-        draggable: true,
-        onDragStart: dragStart,
-        ref: imgRef,
-        __source: {
-            fileName: "src/components/ModalImage.js",
-            lineNumber: 83,
-            columnNumber: 9
-        },
-        __self: undefined
-    })), /*#__PURE__*/ _reactDefault.default.createElement(BtnContainer, {
-        ref: btnsRef,
-        __source: {
-            fileName: "src/components/ModalImage.js",
-            lineNumber: 90,
-            columnNumber: 7
-        },
-        __self: undefined
-    }, /*#__PURE__*/ _reactDefault.default.createElement(Arrow, {
-        onClick: ()=>{
-            changeImage(-1);
-        },
-        __source: {
-            fileName: "src/components/ModalImage.js",
-            lineNumber: 91,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, "\u2039"), /*#__PURE__*/ _reactDefault.default.createElement(ButtonClose, {
-        onClick: ()=>{
-            closeModal();
-        },
-        __source: {
-            fileName: "src/components/ModalImage.js",
-            lineNumber: 98,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, "close"), /*#__PURE__*/ _reactDefault.default.createElement(Arrow, {
-        onClick: ()=>{
-            changeImage(1);
-        },
-        __source: {
-            fileName: "src/components/ModalImage.js",
-            lineNumber: 105,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, "\u203A")));
-};
-_s(ModalImage, "Zq5r9DgoqKzWSfdavHw9U0dWw8o=");
-_c = ModalImage;
-exports.default = ModalImage;
-const Wrapper = _styledComponentsDefault.default.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-_c1 = Wrapper;
-const ImgContainer = _styledComponentsDefault.default.div`
-  flex: 1 1 90%;
-  max-height: 88%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  object-fit: contain;
-  @media (max-width: 450px) {
-    max-height: 100%;
-  }
-
-  img {
-    max-height: 100%;
-    width: 100%;
-    object-fit: contain;
-    box-shadow: 0px 0px 15px black;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    ${({ coord  })=>coord
-};
-  }
-`;
-_c2 = ImgContainer;
-const BtnContainer = _styledComponentsDefault.default.div`
-  flex: 1 1 10%;
-  padding-top: 0.5em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  max-width: 20em;
-  @media (max-width: 500px) {
-    display: none;
-  }
-`;
-_c3 = BtnContainer;
-const ButtonClose = _styledComponentsDefault.default.button`
-  ${_additionalStyles.ButtonWrapper}
-  background: transparent;
-  flex-grow: 0;
-  padding-left: 1em;
-  padding-right: 1em;
-  font-weight: bold;
-
-  :hover {
-    box-shadow: 0px 0px 15px black;
-    text-shadow: 0px 0px 15px black;
-  }
-  :active {
-    color: #aaa;
-    border-color: #aaa;
-  }
-`;
-_c4 = ButtonClose;
-const Arrow = _styledComponentsDefault.default.span`
-  width: 1em;
-  height: 1em;
-  font-size: 2em;
-  line-height: 0.7;
-  text-align: center;
-  border: 2px solid white;
-  border-radius: 50%;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-
-  :hover {
-    box-shadow: 0px 0px 15px black;
-    text-shadow: 0px 0px 15px black;
-  }
-  :active {
-    color: #aaa;
-    border-color: #aaa;
-  }
-`;
-_c5 = Arrow;
-var _c, _c1, _c2, _c3, _c4, _c5;
-$RefreshReg$(_c, "ModalImage");
-$RefreshReg$(_c1, "Wrapper");
-$RefreshReg$(_c2, "ImgContainer");
-$RefreshReg$(_c3, "BtnContainer");
-$RefreshReg$(_c4, "ButtonClose");
-$RefreshReg$(_c5, "Arrow");
-
-  $parcel$ReactRefreshHelpers$6741.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","styled-components":"1U3k6","./styled/additionalStyles":"2ISYd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"giSQw":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$07e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$07e8.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _modalContext = require("../context/ModalContext");
-var _modalContextDefault = parcelHelpers.interopDefault(_modalContext);
-var _s = $RefreshSig$();
-const useModal = ()=>{
-    _s();
-    return _react.useContext(_modalContextDefault.default);
-};
-_s(useModal, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
-exports.default = useModal;
-
-  $parcel$ReactRefreshHelpers$07e8.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","../context/ModalContext":"fvtcr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fvtcr":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1d54 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1d54.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ModalProvider", ()=>ModalProvider
-);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const ModalContext = /*#__PURE__*/ _react.createContext({
-    content: ()=>{},
-    isHide: true
-});
-const APPEARANCE_TIME = 100;
-const ModalProvider = ({ children  })=>{
-    _s();
-    const [content, setContent] = _react.useState(()=>/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null)
-    );
-    const [isHide, setHide] = _react.useState(true);
-    const [opacity, setOpacity] = _react.useState(0);
-    const openModal = ()=>{
-        setHide(false);
-        setTimeout(()=>{
-            setOpacity(1);
-        }, APPEARANCE_TIME);
-    };
-    const closeModal = ()=>{
-        setOpacity(0);
-        setTimeout(()=>{
-            setHide(true);
-        }, APPEARANCE_TIME);
-    };
-    return /*#__PURE__*/ _reactDefault.default.createElement(ModalContext.Provider, {
-        value: {
-            APPEARANCE_TIME,
-            isHide,
-            openModal,
-            closeModal,
-            opacity,
-            content,
-            setContent
-        },
-        __source: {
-            fileName: "src/context/ModalContext.js",
-            lineNumber: 29,
-            columnNumber: 5
-        },
-        __self: undefined
-    }, children);
-};
-_s(ModalProvider, "NoHm2ESkQlbTKuOFYSkVFxMe1IQ=");
-_c = ModalProvider;
-exports.default = ModalContext;
-var _c;
-$RefreshReg$(_c, "ModalProvider");
-
-  $parcel$ReactRefreshHelpers$1d54.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jBgNt":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","../styled/keyframes":"60eli","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jBgNt":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f20e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47529,7 +47598,7 @@ const EditThing = (props)=>{
     const [updateThing] = _client.useMutation(_mutation.UPDATE_THING, {
         onCompleted: (data)=>{
             setAlert('Thing updated', _const.POSITIVE);
-            props.history.push('/');
+            props.history.push('/my');
         },
         onError: (error)=>{
             setAlert(error.message, _const.NEGATIVE);
@@ -47613,7 +47682,7 @@ const Wrapper = _styledComponentsDefault.default.div`
   ${({ theme  })=>theme === _const.POSITIVE ? _additionalStyles.positiveTheme : theme === _const.NEGATIVE ? _additionalStyles.negativeTheme : _additionalStyles.neutralTheme
 };
   position: fixed;
-  z-index: 100;
+  z-index: 2000;
   bottom: 10%;
   left: -100%;
   left: 0;
