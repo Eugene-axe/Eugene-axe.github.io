@@ -46205,7 +46205,7 @@ const RatingField = (props)=>{
         },
         __self: undefined
     }, " ", rating), " / 10")), /*#__PURE__*/ _reactDefault.default.createElement(StarsContainer, {
-        onTouchEnd: (event)=>{
+        onTouchMove: (event)=>{
             let i;
             const el = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
             if (el.tagName.dataset?.key) {
