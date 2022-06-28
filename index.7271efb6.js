@@ -45535,7 +45535,7 @@ $RefreshReg$(_c12, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","react-router-dom":"cHIiW","./elements":"k3ebc","./CategorySelection":"nyAeq","../hooks/useAlert":"jYsML","../hooks/useValidate":"knD9e","./styled/additionalStyles":"2ISYd","../const":"fsDi5","../rest/loadImage":"4Fk0y","../img/picture.svg":"joAsO","./ConstrainPointer":"8Ta8b","./loaders/SpinnerLoader":"1yvWQ","./RatingField":"6Lji7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../hooks/useModal":"giSQw","./ModalImage":"kKKqF"}],"nyAeq":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","react-router-dom":"cHIiW","./elements":"k3ebc","./CategorySelection":"nyAeq","../hooks/useAlert":"jYsML","../hooks/useValidate":"knD9e","../hooks/useModal":"giSQw","./styled/additionalStyles":"2ISYd","../const":"fsDi5","../rest/loadImage":"4Fk0y","../img/picture.svg":"joAsO","./ConstrainPointer":"8Ta8b","./loaders/SpinnerLoader":"1yvWQ","./RatingField":"6Lji7","./ModalImage":"kKKqF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"nyAeq":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b083 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45940,7 +45940,98 @@ $RefreshReg$(_c3, "Item");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","react-router-dom":"cHIiW","@apollo/client":"2LaSG","../client/query":"5Lxqq","../hooks/useViewCategory":"iL5cP","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4Fk0y":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","react-router-dom":"cHIiW","@apollo/client":"2LaSG","../client/query":"5Lxqq","../hooks/useViewCategory":"iL5cP","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"giSQw":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$07e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$07e8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _modalContext = require("../context/ModalContext");
+var _modalContextDefault = parcelHelpers.interopDefault(_modalContext);
+var _s = $RefreshSig$();
+const useModal = ()=>{
+    _s();
+    return _react.useContext(_modalContextDefault.default);
+};
+_s(useModal, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
+exports.default = useModal;
+
+  $parcel$ReactRefreshHelpers$07e8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","../context/ModalContext":"fvtcr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fvtcr":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1d54 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1d54.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ModalProvider", ()=>ModalProvider
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const ModalContext = /*#__PURE__*/ _react.createContext({
+    content: ()=>{},
+    isHide: true
+});
+const APPEARANCE_TIME = 100;
+const ModalProvider = ({ children  })=>{
+    _s();
+    const [content, setContent] = _react.useState(()=>/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null)
+    );
+    const [isHide, setHide] = _react.useState(true);
+    const [opacity, setOpacity] = _react.useState(0);
+    const openModal = ()=>{
+        setHide(false);
+        setTimeout(()=>{
+            setOpacity(1);
+        }, APPEARANCE_TIME);
+    };
+    const closeModal = ()=>{
+        setOpacity(0);
+        setTimeout(()=>{
+            setHide(true);
+        }, APPEARANCE_TIME);
+    };
+    return /*#__PURE__*/ _reactDefault.default.createElement(ModalContext.Provider, {
+        value: {
+            APPEARANCE_TIME,
+            isHide,
+            openModal,
+            closeModal,
+            opacity,
+            content,
+            setModalContent: setContent
+        },
+        __source: {
+            fileName: "src/context/ModalContext.js",
+            lineNumber: 29,
+            columnNumber: 5
+        },
+        __self: undefined
+    }, children);
+};
+_s(ModalProvider, "NoHm2ESkQlbTKuOFYSkVFxMe1IQ=");
+_c = ModalProvider;
+exports.default = ModalContext;
+var _c;
+$RefreshReg$(_c, "ModalProvider");
+
+  $parcel$ReactRefreshHelpers$1d54.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4Fk0y":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 exports.default = async function(fd) {
@@ -46114,6 +46205,17 @@ const RatingField = (props)=>{
         },
         __self: undefined
     }, " ", rating), " / 10")), /*#__PURE__*/ _reactDefault.default.createElement(StarsContainer, {
+        onTouchEnd: (event)=>{
+            let i;
+            const el = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
+            if (el.tagName.dataset?.key) {
+                i = +el.tagName.dataset.key;
+                change(i + 1);
+            } else if (el.closest('DIV').dataset.key) {
+                i = +el.closest('DIV').dataset.key;
+                change(i + 1);
+            }
+        },
         __source: {
             fileName: "src/components/RatingField.js",
             lineNumber: 15,
@@ -46122,25 +46224,27 @@ const RatingField = (props)=>{
         __self: undefined
     }, new Array(10).fill(null).map((item, i)=>/*#__PURE__*/ _reactDefault.default.createElement(EmptyStar, {
             key: i,
-            onClick: ()=>change(i + 1)
-            ,
+            "data-key": i,
+            onClick: (event)=>{
+                change(i + 1);
+            },
             __source: {
                 fileName: "src/components/RatingField.js",
-                lineNumber: 17,
+                lineNumber: 32,
                 columnNumber: 11
             },
             __self: undefined
         }, i + 1 <= rating ? /*#__PURE__*/ _reactDefault.default.createElement(_elements.StarActive, {
             __source: {
                 fileName: "src/components/RatingField.js",
-                lineNumber: 18,
+                lineNumber: 39,
                 columnNumber: 32
             },
             __self: undefined
         }) : /*#__PURE__*/ _reactDefault.default.createElement(_elements.Star, {
             __source: {
                 fileName: "src/components/RatingField.js",
-                lineNumber: 18,
+                lineNumber: 39,
                 columnNumber: 49
             },
             __self: undefined
@@ -46165,7 +46269,6 @@ _c1 = Wrapper;
 const StarsContainer = _styledComponentsDefault.default.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   user-select: none;
 `;
 _c2 = StarsContainer;
@@ -46173,7 +46276,8 @@ const EmptyStar = _styledComponentsDefault.default.div`
   font-size: 2em;
   flex: 1;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   cursor: pointer;
 `;
 _c3 = EmptyStar;
@@ -46199,98 +46303,7 @@ $RefreshReg$(_c5, "RatingNum");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","./elements":"k3ebc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"giSQw":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$07e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$07e8.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _modalContext = require("../context/ModalContext");
-var _modalContextDefault = parcelHelpers.interopDefault(_modalContext);
-var _s = $RefreshSig$();
-const useModal = ()=>{
-    _s();
-    return _react.useContext(_modalContextDefault.default);
-};
-_s(useModal, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
-exports.default = useModal;
-
-  $parcel$ReactRefreshHelpers$07e8.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","../context/ModalContext":"fvtcr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fvtcr":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1d54 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1d54.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ModalProvider", ()=>ModalProvider
-);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const ModalContext = /*#__PURE__*/ _react.createContext({
-    content: ()=>{},
-    isHide: true
-});
-const APPEARANCE_TIME = 100;
-const ModalProvider = ({ children  })=>{
-    _s();
-    const [content, setContent] = _react.useState(()=>/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null)
-    );
-    const [isHide, setHide] = _react.useState(true);
-    const [opacity, setOpacity] = _react.useState(0);
-    const openModal = ()=>{
-        setHide(false);
-        setTimeout(()=>{
-            setOpacity(1);
-        }, APPEARANCE_TIME);
-    };
-    const closeModal = ()=>{
-        setOpacity(0);
-        setTimeout(()=>{
-            setHide(true);
-        }, APPEARANCE_TIME);
-    };
-    return /*#__PURE__*/ _reactDefault.default.createElement(ModalContext.Provider, {
-        value: {
-            APPEARANCE_TIME,
-            isHide,
-            openModal,
-            closeModal,
-            opacity,
-            content,
-            setModalContent: setContent
-        },
-        __source: {
-            fileName: "src/context/ModalContext.js",
-            lineNumber: 29,
-            columnNumber: 5
-        },
-        __self: undefined
-    }, children);
-};
-_s(ModalProvider, "NoHm2ESkQlbTKuOFYSkVFxMe1IQ=");
-_c = ModalProvider;
-exports.default = ModalContext;
-var _c;
-$RefreshReg$(_c, "ModalProvider");
-
-  $parcel$ReactRefreshHelpers$1d54.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kKKqF":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","./elements":"k3ebc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kKKqF":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$6741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -46573,7 +46586,7 @@ $RefreshReg$(_c6, "AddActionContainer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","styled-components":"1U3k6","./styled/additionalStyles":"2ISYd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./elements/ButtonImportantAction":"dbBrq"}],"dbBrq":[function(require,module,exports) {
+},{"react":"21dqq","styled-components":"1U3k6","./styled/additionalStyles":"2ISYd","./elements/ButtonImportantAction":"dbBrq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dbBrq":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c885 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
